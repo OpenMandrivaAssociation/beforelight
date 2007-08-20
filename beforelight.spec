@@ -50,4 +50,4 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_bindir}/%{name}
 %{_datadir}/X11/app-defaults/Beforelight
-%{_mandir}/man1/beforelight.1.bz2
+%{_mandir}/man1/beforelight.*
