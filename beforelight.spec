@@ -19,7 +19,8 @@ BuildRequires: x11-util-macros >= 1.0.1
 BuildRequires: autoconf
 
 %description
-Beforelight is a sample screen saver.
+The beforelight program is a sample implementation of a screen saver for
+X servers supporting the MIT-SCREEN-SAVER extension.
 
 %prep
 %setup -q -n %{name}-%{version}
