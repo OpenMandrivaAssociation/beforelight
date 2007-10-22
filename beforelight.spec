@@ -37,13 +37,6 @@ rm -f configure && autoconf
 rm -rf %{buildroot}
 %makeinstall_std
 
-# I have no idea why the path gets doubled, but it's just one file and
-# it's easier to move it manually than figure out what's wrong with 
-# the build process. -AdamW 2007/06
-
-mkdir -p %{buildroot}%{_datadir}/X11/app-defaults
-mv %{buildroot}%{buildroot}%{_datadir}/X11/app-defaults/Beforelight %{buildroot}%{_datadir}/X11/app-defaults/Beforelight
-
 %clean
 rm -rf %{buildroot}
 
