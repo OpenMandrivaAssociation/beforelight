@@ -1,6 +1,6 @@
 %define name	beforelight
 %define version	1.0.3
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Name: %{name}
 Version: %{version}
@@ -10,7 +10,7 @@ Group: Development/X11
 Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
-Patch0: beforelight-1.0.1-use-xaw8.patch
+Patch0: beforelight-1.0.1-xprint.patch
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxaw-devel >= 1.0.1
 BuildRequires: libxscrnsaver-devel >= 1.0.1
@@ -24,11 +24,12 @@ X servers supporting the MIT-SCREEN-SAVER extension.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1 -b .xaw8
+%patch0 -p1 -b .xprint
 
 rm -f configure && autoconf
 
 %build
+autoreconf -ifs
 %configure	--x-includes=%{_includedir}\
 		--x-libraries=%{_libdir}		
 %make
