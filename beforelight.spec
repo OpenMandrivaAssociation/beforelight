@@ -9,6 +9,7 @@ Summary: Sample screen saver
 Group: Development/X11
 Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 License: MIT
+BuildRoot: %{_tmppath}/%{name}-root
 Patch0: beforelight-1.0.1-xprint.patch
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxaw-devel >= 1.0.1
