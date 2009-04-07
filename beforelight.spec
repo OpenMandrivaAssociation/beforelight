@@ -24,14 +24,10 @@ X servers supporting the MIT-SCREEN-SAVER extension.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1 -b .xprint
-
-rm -f configure && autoconf
+#patch0 -p1 -b .xprint
 
 %build
-autoreconf -ifs
-%configure	--x-includes=%{_includedir}\
-		--x-libraries=%{_libdir}		
+%configure2_5x
 %make
 
 %install
