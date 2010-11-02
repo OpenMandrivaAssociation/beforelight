@@ -1,6 +1,6 @@
 %define name	beforelight
-%define version	1.0.3
-%define release	%mkrel 5
+%define version	1.0.4
+%define release	%mkrel 1
 
 Name: %{name}
 Version: %{version}
