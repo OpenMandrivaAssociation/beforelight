@@ -1,0 +1,18 @@
+--- beforelight-1.0.3/configure.ac.orig	2007-10-29 15:43:44.000000000 -0200
++++ beforelight-1.0.3/configure.ac	2007-10-29 15:44:08.000000000 -0200
+@@ -32,7 +32,14 @@ AC_PROG_CC
+ AC_PROG_INSTALL
+ 
+ # Checks for pkg-config packages
+-PKG_CHECK_MODULES(BEFORELIGHT, x11 xscrnsaver xt xaw7)
++PKG_CHECK_MODULES(BEFORELIGHT, x11 xscrnsaver xt)
++XAW_CHECK_XPRINT_SUPPORT(XAW)
++if test "x$xaw_use_xprint" = "xyes" ; then
++    PKG_CHECK_MODULES(XPRINT_UTIL, xprintutil xp)
++
++    BEFORELIGHT_CFLAGS="$BEFORELIGHT_CFLAGS $XAW_CFLAGS $XPRINT_UTIL_CFLAGS"
++    BEFORELIGHT_LIBS="$BEFORELIGHT_LIBS $XAW_LIBS $XPRINT_UTIL_LIBS"
++fi
+ AC_SUBST(BEFORELIGHT_CFLAGS)
+ AC_SUBST(BEFORELIGHT_LIBS)
+ 
