@@ -1,15 +1,14 @@
 %define name	beforelight
-%define version	1.0.4
-%define release	%mkrel 4
+%define version	1.0.5
+%define release	1
 
 Name: %{name}
 Version: %{version}
 Release: %{release}
 Summary: Sample screen saver
 Group: Development/X11
-Source: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
+Source0: http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 License: MIT
-BuildRoot: %{_tmppath}/%{name}-root
 Patch0: beforelight-1.0.1-xprint.patch
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxaw-devel >= 1.0.1
@@ -31,14 +30,9 @@ X servers supporting the MIT-SCREEN-SAVER extension.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %{_bindir}/%{name}
 %{_datadir}/X11/app-defaults/Beforelight
 %{_mandir}/man1/beforelight.*
