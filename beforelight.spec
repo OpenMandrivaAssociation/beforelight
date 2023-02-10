@@ -1,11 +1,11 @@
 Summary:	Sample screen saver
 Name:		beforelight
-Version:	1.0.5
-Release:	10
+Version:	1.0.6
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
-Source0:	http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.xz
 
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xaw7)
@@ -18,17 +18,16 @@ The beforelight program is a sample implementation of a screen saver for
 X servers supporting the MIT-SCREEN-SAVER extension.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure2_5x
-%make
+%configure
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %{_bindir}/%{name}
 %{_datadir}/X11/app-defaults/Beforelight
-%{_mandir}/man1/beforelight.*
-
+%doc %{_mandir}/man1/beforelight.*
