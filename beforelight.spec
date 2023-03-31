@@ -1,7 +1,7 @@
 Summary:	Sample screen saver
 Name:		beforelight
 Version:	1.0.6
-Release:	1
+Release:	2
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
